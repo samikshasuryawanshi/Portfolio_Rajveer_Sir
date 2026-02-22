@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2D6A4F;
+  /* Forest Green */
+  --color-secondary: #52B788;
+  /* Emerald Green */
+  --color-accent: #95D5B2;
+  /* Mint Green */
+  --color-background: #F9F7F2;
+  /* Soft Cream */
+  --color-surface: #EFECE5;
+  /* Darker Cream */
+  --color-foreground: #1B4332;
+  /* Deepest Green */
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(27, 67, 50, 0.1);
+}
+
+@utility text-gradient {
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
