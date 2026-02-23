@@ -1,4 +1,6 @@
 import { Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import PeepIllustration from "./PeepIllustration";
+import { motion } from "framer-motion";
 
 const ContactAndFooter = () => {
   const socialLinks = [
@@ -9,69 +11,87 @@ const ContactAndFooter = () => {
   ];
 
   return (
-    <section id="contact" className="pt-32 pb-12 bg-[#050505] text-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="contact" className="pt-32 pb-12 bg-background text-black relative overflow-hidden">
+      {/* Background Illustration */}
+      <PeepIllustration
+        index={88}
+        className="absolute top-20 right-20 w-32 h-32 opacity-20 hidden lg:block"
+        animated={true}
+      />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Top: Contact Info Section */}
         <div className="grid md:grid-cols-2 gap-16 items-start mb-32">
           <div>
             <div className="inline-block mb-4">
-              <span className="text-xs uppercase tracking-[0.3em] text-white/40 font-medium">
+              <span className="text-xs uppercase tracking-[0.3em] text-black/70 font-black">
                 Connection — Reach Out
               </span>
             </div>
 
             <h2 className="text-5xl md:text-7xl font-light tracking-tight mb-10 leading-[1.1]">
               Let's start <br />
-              <span className="italic font-serif text-white/60">the conversation</span>.
+              <span className="italic font-serif text-black/70">the conversation</span>.
             </h2>
 
-            <p className="text-xl text-white/50 max-w-sm leading-relaxed font-light">
+            <p className="text-xl text-black/80 max-w-sm leading-relaxed font-medium mb-8">
               Have a big idea or a brand to polish? I’m always open to discussing new projects and creative opportunities.
             </p>
+
+            <motion.div
+              initial={{ opacity: 0, rotate: 2 }}
+              whileInView={{ opacity: 1 }}
+              className="font-[family-name:var(--font-hand)] text-black/70 text-2xl flex items-center gap-4"
+            >
+              Wait no more! <PeepIllustration index={14} className="w-12 h-12 opacity-80" animated={false} />
+            </motion.div>
           </div>
 
           <div className="space-y-10 md:pt-20">
-            <div className="group flex items-center gap-6 border-l border-white/10 pl-6 hover:border-primary transition-colors duration-500">
-              <Mail className="w-5 h-5 text-primary/60" />
+            <div className="group flex items-center gap-6 border-l border-black/10 pl-6 hover:border-black transition-colors duration-500">
+              <Mail className="w-5 h-5 text-black/60" />
               <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-1 font-mono">Email</div>
-                <div className="text-lg font-light text-white/80 group-hover:text-white transition-colors">hello@rajveer.dev</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-black/30 mb-1 font-mono font-bold">Email</div>
+                <div className="text-lg font-light text-black/80 group-hover:text-black transition-colors">hello@rajveer.dev</div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-6 border-l border-white/10 pl-6 hover:border-primary transition-colors duration-500">
-              <Phone className="w-5 h-5 text-white/20" />
+            <div className="group flex items-center gap-6 border-l border-black/10 pl-6 hover:border-black transition-colors duration-500">
+              <Phone className="w-5 h-5 text-black/20" />
               <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-1 font-mono">Phone</div>
-                <div className="text-lg font-light text-white/80 group-hover:text-white transition-colors">+91 98765 43210</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-black/30 mb-1 font-mono font-bold">Phone</div>
+                <div className="text-lg font-light text-black/80 group-hover:text-black transition-colors">+91 98765 43210</div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-6 border-l border-white/10 pl-6 hover:border-primary transition-colors duration-500">
-              <MapPin className="w-5 h-5 text-white/20" />
+            <div className="group flex items-center gap-6 border-l border-black/10 pl-6 hover:border-black transition-colors duration-500">
+              <MapPin className="w-5 h-5 text-black/20" />
               <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-1 font-mono">Location</div>
-                <div className="text-lg font-light text-white/80 group-hover:text-white transition-colors">Mumbai, India</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-black/30 mb-1 font-mono font-bold">Location</div>
+                <div className="text-lg font-light text-black/80 group-hover:text-black transition-colors">Mumbai, India</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom: Footer Section */}
-        <footer className="pt-12 border-t border-white/5">
+        <footer className="pt-12 border-t border-black/5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
-              <div className="text-2xl font-bold tracking-tighter text-white mb-2">Rajveer<span className="text-primary">.</span></div>
-              <p className="text-white/30 text-xs uppercase tracking-widest font-light">Building digital excellence.</p>
+              <div className="text-3xl font-bold tracking-tighter text-black mb-2 font-[family-name:var(--font-hand)]">
+                Rajveer Parmar<span className="text-black/20">.</span>
+              </div>
+              <p className="text-black/30 text-xs uppercase tracking-widest font-black">Building digital excellence.</p>
             </div>
 
             {/* Minimalist Socials */}
-            <div className="flex gap-8">
+            <div className="flex gap-8 items-center">
+              <PeepIllustration index={102} className="w-10 h-10 opacity-20 mr-4" animated={false} />
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
-                  className="text-white/30 hover:text-white transition-colors duration-300"
+                  className="text-black/30 hover:text-black transition-colors duration-300"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -79,7 +99,7 @@ const ContactAndFooter = () => {
               ))}
             </div>
 
-            <div className="text-white/20 text-[10px] uppercase tracking-[0.3em] font-mono font-bold">
+            <div className="text-black/20 text-[10px] uppercase tracking-[0.3em] font-mono font-black">
               © {new Date().getFullYear()} All rights reserved.
             </div>
           </div>

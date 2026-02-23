@@ -1,20 +1,22 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
 @theme {
-  --color-primary: #00FF94;
-  /* Neo Mint / Spring Green */
-  --color-secondary: #00FF94;
-  /* Neo Mint / Spring Green */
+  --color-primary: #000000;
+  /* High contrast black */
+  --color-secondary: #4B5563;
+  /* Slate-600 */
   --color-accent: #00FF94;
-  /* Neo Mint / Spring Green */
-  --color-background: #000000;
-  /* Pure Black */
-  --color-surface: #050505;
-  /* Deep Charcoal */
-  --color-foreground: #FFFFFF;
-  /* White */
+  /* Neo Mint for subtle pops */
+  --color-background: #E5E7EB;
+  /* Stone Gray Background */
+  --color-surface: #D1D5DB;
+  /* Darker Gray Surface */
+  --color-foreground: #000000;
+  /* Pure Black Text */
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-hand: "Caveat", cursive;
 }
 
 @layer base {
@@ -31,10 +33,10 @@
 }
 
 @utility glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @utility text-gradient {
@@ -44,13 +46,13 @@
 }
 
 @utility grid-pattern {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 @utility bento-card {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2.5rem;
 }
