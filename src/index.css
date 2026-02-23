@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2D6A4F;
-  /* Forest Green */
-  --color-secondary: #52B788;
-  /* Emerald Green */
-  --color-accent: #95D5B2;
-  /* Mint Green */
-  --color-background: #F9F7F2;
-  /* Soft Cream */
-  --color-surface: #EFECE5;
-  /* Darker Cream */
-  --color-foreground: #1B4332;
-  /* Deepest Green */
+  --color-primary: #00FF94;
+  /* Neo Mint / Spring Green */
+  --color-secondary: #00FF94;
+  /* Neo Mint / Spring Green */
+  --color-accent: #00FF94;
+  /* Neo Mint / Spring Green */
+  --color-background: #000000;
+  /* Pure Black */
+  --color-surface: #050505;
+  /* Deep Charcoal */
+  --color-foreground: #FFFFFF;
+  /* White */
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
@@ -31,14 +31,26 @@
 }
 
 @utility glass {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(27, 67, 50, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @utility text-gradient {
   background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@utility grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@utility bento-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2.5rem;
 }

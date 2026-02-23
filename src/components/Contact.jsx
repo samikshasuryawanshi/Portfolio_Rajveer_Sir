@@ -1,95 +1,92 @@
-import { motion } from "framer-motion";
-import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
-const Contact = () => {
-    return (
-        <section id="contact" className="py-24 bg-surface/30">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid md:grid-cols-2 gap-16">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className="text-4xl font-bold mb-6 text-foreground">Get in Touch</h2>
-                        <p className="text-foreground/70 mb-10 leading-relaxed">
-                            Have a big idea or a brand to polish? Feel free to reach out.
-                            I'm always open to discussing new projects and creative opportunities.
-                        </p>
+const ContactAndFooter = () => {
+  const socialLinks = [
+    { name: "Github", icon: <Github className="w-5 h-5" />, url: "#" },
+    { name: "Linkedin", icon: <Linkedin className="w-5 h-5" />, url: "#" },
+    { name: "Twitter", icon: <Twitter className="w-5 h-5" />, url: "#" },
+    { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "#" },
+  ];
 
-                        <div className="space-y-6">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 glass rounded-full flex items-center justify-center text-primary shadow-lg shadow-primary/5">
-                                    <Mail className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-foreground/60">Email</div>
-                                    <div className="font-bold text-foreground">hello@rajveer.dev</div>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 glass rounded-full flex items-center justify-center text-secondary shadow-lg shadow-secondary/5">
-                                    <Phone className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-foreground/60">Phone</div>
-                                    <div className="font-bold text-foreground">+91 98765 43210</div>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 glass rounded-full flex items-center justify-center text-accent shadow-lg shadow-accent/5">
-                                    <MapPin className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-foreground/60">Location</div>
-                                    <div className="font-bold text-foreground">Mumbai, India</div>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.form
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="space-y-6 glass p-8 rounded-3xl border border-primary/10 shadow-2xl shadow-primary/5"
-                        onSubmit={(e) => e.preventDefault()}
-                    >
-                        <div className="grid sm:grid-cols-2 gap-6">
-                            <div>
-                                <label className="block text-sm font-bold mb-2 text-foreground/70">Name</label>
-                                <input
-                                    type="text"
-                                    className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-all text-foreground placeholder-primary/40"
-                                    placeholder="John Doe"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold mb-2 text-foreground/70">Email</label>
-                                <input
-                                    type="email"
-                                    className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-all text-foreground placeholder-primary/40"
-                                    placeholder="john@example.com"
-                                />
-                            </div>
-                        </div>
-                        <div>
-                            <label className="block text-sm font-bold mb-2 text-foreground/70">Message</label>
-                            <textarea
-                                rows={4}
-                                className="w-full bg-primary/5 border border-primary/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-all text-foreground resize-none placeholder-primary/40"
-                                placeholder="What's on your mind?"
-                            />
-                        </div>
-                        <button className="w-full py-5 rounded-2xl bg-gradient-to-r from-primary to-secondary text-background font-bold text-lg hover:brightness-110 shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3 group">
-                            Send Message
-                            <Send className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </motion.form>
-                </div>
+  return (
+    <section id="contact" className="pt-32 pb-12 bg-[#050505] text-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Top: Contact Info Section */}
+        <div className="grid md:grid-cols-2 gap-16 items-start mb-32">
+          <div>
+            <div className="inline-block mb-4">
+              <span className="text-xs uppercase tracking-[0.3em] text-white/40 font-medium">
+                Connection — Reach Out
+              </span>
             </div>
-        </section>
-    );
+
+            <h2 className="text-5xl md:text-7xl font-light tracking-tight mb-10 leading-[1.1]">
+              Let's start <br />
+              <span className="italic font-serif text-white/60">the conversation</span>.
+            </h2>
+
+            <p className="text-xl text-white/50 max-w-sm leading-relaxed font-light">
+              Have a big idea or a brand to polish? I’m always open to discussing new projects and creative opportunities.
+            </p>
+          </div>
+
+          <div className="space-y-10 md:pt-20">
+            <div className="group flex items-center gap-6 border-l border-white/10 pl-6 hover:border-primary transition-colors duration-500">
+              <Mail className="w-5 h-5 text-primary/60" />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-1 font-mono">Email</div>
+                <div className="text-lg font-light text-white/80 group-hover:text-white transition-colors">hello@rajveer.dev</div>
+              </div>
+            </div>
+
+            <div className="group flex items-center gap-6 border-l border-white/10 pl-6 hover:border-primary transition-colors duration-500">
+              <Phone className="w-5 h-5 text-white/20" />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-1 font-mono">Phone</div>
+                <div className="text-lg font-light text-white/80 group-hover:text-white transition-colors">+91 98765 43210</div>
+              </div>
+            </div>
+
+            <div className="group flex items-center gap-6 border-l border-white/10 pl-6 hover:border-primary transition-colors duration-500">
+              <MapPin className="w-5 h-5 text-white/20" />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-1 font-mono">Location</div>
+                <div className="text-lg font-light text-white/80 group-hover:text-white transition-colors">Mumbai, India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom: Footer Section */}
+        <footer className="pt-12 border-t border-white/5">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="text-center md:text-left">
+              <div className="text-2xl font-bold tracking-tighter text-white mb-2">Rajveer<span className="text-primary">.</span></div>
+              <p className="text-white/30 text-xs uppercase tracking-widest font-light">Building digital excellence.</p>
+            </div>
+
+            {/* Minimalist Socials */}
+            <div className="flex gap-8">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  className="text-white/30 hover:text-white transition-colors duration-300"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+
+            <div className="text-white/20 text-[10px] uppercase tracking-[0.3em] font-mono font-bold">
+              © {new Date().getFullYear()} All rights reserved.
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  );
 };
 
-export default Contact;
+export default ContactAndFooter;

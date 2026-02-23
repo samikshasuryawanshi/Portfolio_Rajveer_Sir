@@ -1,133 +1,139 @@
-import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Award, TrendingUp, Pen, Layers } from "lucide-react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { GraduationCap, Briefcase, ArrowDown } from "lucide-react";
+import { useRef } from "react";
 
 const Career = () => {
-    const timeline = [
-        {
-            type: "work",
-            title: "Senior UI/UX Designer",
-            company: "Creative Pulse Agency",
-            period: "2022 - Present",
-            desc: "Leading design systems for global brands and optimizing conversion rates through data-driven UI."
-        },
-        {
-            type: "education",
-            title: "Master of Design",
-            company: "Institute of Digital Arts",
-            period: "2020 - 2022",
-            desc: "Specialized in User Experience and Human-Computer Interaction."
-        },
-        {
-            type: "work",
-            title: "Digital Marketing Specialist",
-            company: "Growth Hackers Ltd",
-            period: "2018 - 2020",
-            desc: "Managed $100k+ monthly budgets and increased organic reach by 300% for key accounts."
-        },
-        {
-            type: "education",
-            title: "Bachelors in Fine Arts",
-            company: "Metropolitan University",
-            period: "2014 - 2018",
-            desc: "Foundation in visual storytelling and color theory."
-        },
-        {
-            type: "education",
-            title: "Schooling (High School)",
-            company: "Saint Joseph's Academy",
-            period: "2012 - 2014",
-            desc: "Focus on Arts and Communications."
-        }
-    ];
+  const containerRef = useRef(null);
 
-    const expertises = [
-        { icon: <Layers className="w-8 h-8" />, label: "Figma Expert", color: "text-purple-400" },
-        { icon: <Pen className="w-8 h-8" />, label: "Canva Pro", color: "text-cyan-400" },
-        { icon: <TrendingUp className="w-8 h-8" />, label: "Growth Hacker", color: "text-rose-400" },
-        { icon: <Award className="w-8 h-8" />, label: "Certified Marketer", color: "text-amber-400" }
-    ];
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end end"],
+  });
 
-    return (
-        <section id="career" className="py-24 bg-surface/40">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-20">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold mb-4 text-foreground"
-                    >
-                        Career <span className="text-primary underline decoration-accent/30 underline-offset-8">Roadmap</span>
-                    </motion.h2>
-                    <p className="text-foreground/70 max-w-2xl mx-auto">
-                        A journey of continuous learning, creative evolution, and measurable digital growth.
-                    </p>
-                </div>
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
-                <div className="grid lg:grid-cols-3 gap-12">
-                    {/* Expertise Panel */}
-                    <div className="lg:col-span-1 space-y-6">
-                        <h3 className="text-2xl font-bold mb-8 text-foreground">Core Mastery</h3>
-                        <div className="grid grid-cols-2 gap-4">
-                            {expertises.map((exp, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    whileHover={{ y: -5 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="p-6 glass rounded-2xl flex flex-col items-center text-center gap-3 shadow-xl shadow-primary/5 border border-primary/10"
-                                >
-                                    <div className={`${exp.color}`}>{exp.icon}</div>
-                                    <span className="text-sm font-bold text-foreground">{exp.label}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
+  const timeline = [
+    { type: "work", title: "Senior UI/UX Designer", company: "Creative Pulse Agency", period: "2022 — Present", desc: "Leading design systems for global brands and optimizing conversion rates through data-driven UI." },
+    { type: "education", title: "Master of Design", company: "Institute of Digital Arts", period: "2020 — 2022", desc: "Specialized in User Experience and Human-Computer Interaction." },
+    { type: "work", title: "Digital Marketing Specialist", company: "Growth Hackers Ltd", period: "2018 — 2020", desc: "Managed $100k+ monthly budgets and increased organic reach by 300%." },
+    { type: "education", title: "Bachelors in Fine Arts", company: "Metropolitan University", period: "2014 — 2018", desc: "Foundation in visual storytelling and color theory." },
+  ];
 
-                    {/* Timeline Panel */}
-                    <div className="lg:col-span-2 relative">
-                        <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-secondary to-transparent hidden md:block" />
+  const itemVars = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } 
+    },
+  };
 
-                        <div className="space-y-12">
-                            {timeline.map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="relative pl-0 md:pl-20"
-                                >
-                                    {/* Timeline Node */}
-                                    <div className="absolute left-6 md:left-[30px] -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10 hidden md:block shadow-[0_0_15px_rgba(45,106,79,0.2)]" />
+  return (
+    <section id="career" className="py-40 bg-[#050505] text-white overflow-hidden" ref={containerRef}>
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Structural Change: 2-Column Grid with different widths */}
+        <div className="grid lg:grid-cols-[0.4fr_1fr] gap-12 lg:gap-24">
+          
+          {/* Left Column: Sticky Header & Navigation */}
+          <div className="relative">
+            <div className="lg:sticky lg:top-40 space-y-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-xs uppercase tracking-[0.3em] text-white/40 font-medium mb-6 block">
+                  Evolution
+                </span>
+                <h2 className="text-5xl md:text-6xl font-light tracking-tight leading-[1.1] mb-8">
+                  The <br /> 
+                  <span className="italic font-serif text-white/60">Journey</span>.
+                </h2>
+                <p className="text-lg text-white/40 font-light leading-relaxed max-w-xs">
+                  A curated record of professional growth and academic milestones.
+                </p>
+              </motion.div>
 
-                                    <div className="glass p-8 rounded-3xl relative overflow-hidden group border border-primary/10 shadow-xl shadow-primary/5">
-                                        <div className={`absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity text-primary`}>
-                                            {item.type === 'work' ? <Briefcase size={80} /> : <GraduationCap size={80} />}
-                                        </div>
-                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-                                            <div>
-                                                <h4 className="text-xl font-bold text-foreground">{item.title}</h4>
-                                                <p className="text-primary font-bold">{item.company}</p>
-                                            </div>
-                                            <span className="px-4 py-1 rounded-full bg-primary/5 text-xs font-black text-primary border border-primary/10">
-                                                {item.period}
-                                            </span>
-                                        </div>
-                                        <p className="text-foreground/70 text-sm leading-relaxed">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+              {/* Minimal Progress Indicator */}
+              <div className="hidden lg:flex items-center gap-6 group">
+                <div className="h-[1px] w-12 bg-white/20 group-hover:w-20 transition-all duration-500" />
+                <motion.div 
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                >
+                  <ArrowDown size={14} className="text-primary" />
+                </motion.div>
+              </div>
             </div>
-        </section>
-    );
+          </div>
+
+          {/* Right Column: The Actual Timeline */}
+          <div className="relative pl-8 lg:pl-0">
+            
+            {/* Structural Line: Positioned to the far left of the right column */}
+            <div className="absolute left-0 top-0 w-[1px] h-full bg-white/5">
+              <motion.div 
+                style={{ scaleY, originY: 0 }}
+                className="w-full h-full bg-gradient-to-b from-primary via-primary/50 to-transparent"
+              />
+            </div>
+
+            <div className="space-y-32">
+              {timeline.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={itemVars}
+                  className="relative pl-12 lg:pl-20 group"
+                >
+                  {/* Decorative Anchor Dot */}
+                  <div className="absolute left-[-4.5px] top-2">
+                    <div className="w-[10px] h-[10px] rounded-full bg-[#050505] border border-primary group-hover:scale-150 transition-transform duration-500" />
+                  </div>
+
+                  {/* Period Label: Positioned above for cleaner structure */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-xs font-mono text-white/20">0{i + 1}</span>
+                    <span className="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-bold">
+                      {item.period}
+                    </span>
+                  </div>
+
+                  {/* Content with Variable Weights */}
+                  <div className="max-w-2xl">
+                    <h4 className="text-3xl md:text-5xl font-light text-white mb-4 group-hover:text-primary transition-colors duration-700">
+                      {item.title}
+                    </h4>
+                    
+                    <div className="flex items-center gap-3 mb-8">
+                      {item.type === 'work' ? 
+                        <Briefcase size={14} className="text-white/20" /> : 
+                        <GraduationCap size={14} className="text-white/20" />
+                      }
+                      <p className="text-[11px] uppercase tracking-widest text-white/40 font-bold italic">
+                        {item.company}
+                      </p>
+                    </div>
+
+                    <p className="text-white/40 text-lg md:text-xl leading-relaxed font-light">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Career;
