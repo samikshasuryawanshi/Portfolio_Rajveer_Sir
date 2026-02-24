@@ -19,7 +19,7 @@ const Skills = () => {
     },
     {
       title: "Strategy & Consulting",
-      icon: <Briefcase className="w-6 h-6 text-black/60" />,
+      icon: <Briefcase className="w-6 h-6 text-black" />,
       note: "Thinking ahead.",
       skills: [
         { name: "UX Consultant", icon: <Search className="w-4 h-4" /> },
@@ -28,7 +28,7 @@ const Skills = () => {
     },
     {
       title: "Analysis & Psychology",
-      icon: <Brain className="w-6 h-6 text-black/40" />,
+      icon: <Brain className="w-6 h-6 text-black/60" />,
       note: "Human-first approach.",
       skills: [
         { name: "User Analysis", icon: <Users className="w-4 h-4" /> },
@@ -68,12 +68,12 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-5xl md:text-7xl font-light tracking-tight mb-10 leading-[1.1]">
-                Design & <br />
-                <span className="italic font-serif text-black/70">Psychology</span>.
+              <h2 className="text-4xl md:text-7xl font-light tracking-tight mb-10 leading-[1.1]">
+                Design & <br className="hidden md:block" />
+                <span className="italic text-black/70">Psychology</span>.
               </h2>
 
-              <p className="text-xl text-black/70 max-w-sm leading-relaxed mb-16 font-medium">
+              <p className="text-xl text-black max-w-sm leading-relaxed mb-16 font-medium">
                 Combining artistic creativity with behavioral science to build impactful digital strategies that actually convert.
               </p>
 
@@ -83,7 +83,7 @@ const Skills = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  className="absolute bottom-12 left-28 font-[family-name:var(--font-hand)] text-black/60 text-lg rotate-3"
+                  className="absolute bottom-12 left-28 text-black/80 text-lg rotate-3"
                 >
                   It's all about empathy.
                 </motion.div>
@@ -109,12 +109,12 @@ const Skills = () => {
               <motion.div key={idx} variants={itemVars} className="group relative">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
-                    <span className="text-xs font-mono text-black/40">0{idx + 1}</span>
-                    <h3 className="text-[10px] uppercase tracking-[0.3em] font-black text-black/60">
+                    <span className="text-xs text-black/60 font-black">0{idx + 1}</span>
+                    <h3 className="text-[10px] uppercase tracking-[0.3em] font-black text-black">
                       {category.title}
                     </h3>
                   </div>
-                  <span className="font-[family-name:var(--font-hand)] text-black/50 text-sm italic">
+                  <span className="text-black/80 text-sm italic">
                     {category.note}
                   </span>
                 </div>
@@ -127,10 +127,10 @@ const Skills = () => {
                       className="glass flex items-center justify-between p-5 rounded-2xl group/item hover:border-black/20 transition-all cursor-default"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="text-black/40 group-hover/item:text-black transition-colors">
+                        <span className="text-black/60 group-hover/item:text-black transition-colors">
                           {skill.icon}
                         </span>
-                        <span className="text-2xl font-light text-black/80 group-hover/item:text-foreground">
+                        <span className="text-2xl font-light text-black group-hover/item:text-foreground">
                           {skill.name}
                         </span>
                       </div>

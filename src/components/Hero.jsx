@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section id="hero" className="relative h-screen w-full bg-background text-black overflow-hidden pt-20">
       {/* Header Info */}
-      <div className="absolute top-20 left-1/2 grid -translate-x-1/2 content-start justify-items-center gap-10 text-center text-black z-20">
+      <div className="absolute lg:top-20 top-40 left-1/2 grid -translate-x-1/2 content-start justify-items-center gap-10 text-center text-black z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

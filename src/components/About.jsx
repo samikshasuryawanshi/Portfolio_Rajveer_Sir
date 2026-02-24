@@ -44,18 +44,15 @@ const About = () => {
           {/* Left Column: Content */}
           <div>
             <motion.div variants={itemVars} className="inline-block mb-4">
-              <span className="text-xs uppercase tracking-[0.3em] text-black/60 font-black">
+              <span className="text-xs uppercase tracking-[0.3em] text-black/80 font-black">
                 About — Studio
               </span>
             </motion.div>
 
-            <motion.h2
-              variants={itemVars}
-              className="text-5xl md:text-7xl font-light tracking-tight mb-10 leading-[1.1]"
-            >
-              Designing <span className="italic font-serif text-black/70">intent</span>, <br />
+            <h2 className="text-4xl md:text-7xl font-light tracking-tight mb-10 leading-[1.1]">
+              Designing <span className="italic text-black/70">intent</span>, <br className="hidden md:block" />
               measuring <span className="text-black/90">impact</span>.
-            </motion.h2>
+            </h2>
 
             <motion.p
               variants={itemVars}
@@ -74,7 +71,7 @@ const About = () => {
                   className="group relative flex items-center justify-between py-6 border-b border-black/5 hover:border-black/20 transition-colors cursor-default"
                 >
                   <div className="flex items-center gap-6">
-                    <span className="text-xs font-mono text-black/20">0{i + 1}</span>
+                    <span className="text-xs text-black/70">0{i + 1}</span>
                     <h3 className="text-2xl font-light group-hover:translate-x-2 transition-transform duration-500">
                       {skill.title}
                     </h3>
@@ -104,7 +101,7 @@ const About = () => {
                 initial={{ scale: 1.2 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-                src="https://images.unsplash.com/photo-1541461946822-961849d111ef?auto=format&fit=crop&q=80&w=800"
+                src="./profile.jpeg"
                 alt="Workspace"
                 className="w-full h-full object-cover"
               />
@@ -141,7 +138,7 @@ const About = () => {
               <motion.div
                 initial={{ opacity: 0, rotate: -10 }}
                 whileInView={{ opacity: 1, rotate: -5 }}
-                className="absolute -bottom-20 -left-4 font-[family-name:var(--font-hand)] text-black/40 text-lg leading-tight w-40"
+                className="absolute -bottom-20 -left-4 text-black/40 text-lg leading-tight w-40"
               >
                 Tested & verified through data.
               </motion.div>
@@ -149,7 +146,7 @@ const About = () => {
               <motion.div
                 initial={{ opacity: 0, rotate: 2 }}
                 whileInView={{ opacity: 1 }}
-                className="font-[family-name:var(--font-hand)] text-black/70 text-2xl flex items-center gap-4"
+                className="text-black/70 text-2xl flex items-center gap-4"
               >
                 Wait no more! <PeepIllustration index={14} className="w-12 h-12 opacity-100" animated={false} />
               </motion.div>

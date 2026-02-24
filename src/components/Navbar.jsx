@@ -59,9 +59,9 @@ const Navbar = () => {
           href="#hero"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="pointer-events-auto relative z-[120] text-3xl font-bold tracking-tighter text-black group flex items-center font-[family-name:var(--font-hand)]"
+          className="pointer-events-auto relative z-[120] text-3xl font-bold tracking-tighter text-black group flex items-center"
         >
-          Rajveer Parmar<span className="text-black/20 group-hover:rotate-12 transition-transform inline-block">.</span>
+          Rajveer Parmar<span className="text-black/70 group-hover:rotate-12 transition-transform inline-block">.</span>
         </motion.a>
 
         {/* Desktop Nav */}
@@ -75,7 +75,7 @@ const Navbar = () => {
               key={link.name}
               href={link.href}
               className={`px-6 py-2 text-[10px] font-black uppercase tracking-[0.2em] transition-all relative group rounded-full 
-              ${activeSection === link.id ? "text-black" : "text-black/40 hover:text-black"}`}
+              ${activeSection === link.id ? "text-black" : "text-black/70 hover:text-black"}`}
             >
               <span className="relative z-10">{link.name}</span>
               {activeSection === link.id && (
@@ -92,8 +92,8 @@ const Navbar = () => {
         {/* Action Side */}
         <div className="hidden lg:flex items-center gap-6 pointer-events-auto relative z-[120]">
           <div className="flex gap-4">
-            <motion.a whileHover={{ y: -2 }} href="#" className="text-black/20 hover:text-black transition-colors"><Github size={18} /></motion.a>
-            <motion.a whileHover={{ y: -2 }} href="#" className="text-black/20 hover:text-black transition-colors"><Linkedin size={18} /></motion.a>
+            <motion.a whileHover={{ y: -2 }} href="#" className="text-black/70 hover:text-black transition-colors"><Github size={18} /></motion.a>
+            <motion.a whileHover={{ y: -2 }} href="#" className="text-black/70 hover:text-black transition-colors"><Linkedin size={18} /></motion.a>
           </div>
           <motion.a
             href="#contact"
@@ -128,7 +128,7 @@ const Navbar = () => {
             className="fixed inset-0 z-[110] lg:hidden bg-white pointer-events-auto flex flex-col p-8 pt-32 h-screen w-screen"
           >
             <div className="flex flex-col gap-4 relative z-10">
-              <p className="text-black/20 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Navigation</p>
+              <p className="text-black/70 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Navigation</p>
               {navLinks.map((link, i) => (
                 <motion.a
                   initial={{ opacity: 0, x: 20 }}
@@ -138,7 +138,7 @@ const Navbar = () => {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`text-5xl font-light tracking-tighter transition-all flex items-center justify-between group 
-                  ${activeSection === link.id ? "text-black italic" : "text-black/30 hover:text-black"}`}
+                  ${activeSection === link.id ? "text-black italic" : "text-black/80 hover:text-black"}`}
                 >
                   {link.name}
                   <ArrowRight size={24} className={`opacity-0 group-hover:opacity-100 transition-all ${activeSection === link.id ? "opacity-100" : ""}`} />
@@ -148,12 +148,12 @@ const Navbar = () => {
 
             {/* Mobile Footer Area */}
             <div className="mt-auto pb-12 flex flex-col gap-8 relative z-10">
-              <div className="flex gap-8 text-black/20">
+              <div className="flex gap-8 text-black">
                 <Github size={24} />
                 <Linkedin size={24} />
                 <Mail size={24} />
               </div>
-              <p className="text-black/10 text-[10px] uppercase tracking-[0.4em] font-mono">
+              <p className="text-black/10 text-[10px] uppercase tracking-[0.4em]">
                 © 2026 Rajveer Parmar
               </p>
             </div>

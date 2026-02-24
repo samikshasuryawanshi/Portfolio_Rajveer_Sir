@@ -20,39 +20,75 @@ const Career = () => {
   const timeline = [
     {
       type: "work",
-      title: "Senior UI/UX Designer",
-      company: "Creative Pulse Agency",
-      period: "2022 — Present",
-      desc: "Leading design systems for global brands and optimizing conversion rates through data-driven UI.",
-      peepIndex: 5,
-      note: "Full creative freedom."
-    },
-    {
-      type: "education",
-      title: "Master of Design",
-      company: "Institute of Digital Arts",
-      period: "2020 — 2022",
-      desc: "Specialized in User Experience and Human-Computer Interaction.",
-      peepIndex: 94, // Graduation cap style
-      note: "Learned the 'Why'."
+      title: "Founder & CEO",
+      company: "Zintrix Technologies",
+      period: "Present",
+      desc: "Architecting the technical vision and business strategy for future-facing digital products.",
+      peepIndex: 33,
+      note: "Visionary & founder."
     },
     {
       type: "work",
-      title: "Digital Marketing Specialist",
-      company: "Growth Hackers Ltd",
-      period: "2018 — 2020",
-      desc: "Managed $100k+ monthly budgets and increased organic reach by 300%.",
+      title: "CTO",
+      company: "Shiksha Salahkar Medical Advisory Pvt Ltd",
+      period: "Strategic Tech Lead",
+      desc: "Leading technical innovation and digital infrastructure for specialized medical services.",
       peepIndex: 45,
-      note: "Numbers don't lie."
+      note: "Tech strategy leaf."
+    },
+    {
+      type: "work",
+      title: "UI/UX Designer",
+      company: "DSPL Technologies",
+      period: "Core Design",
+      desc: "Delivering high-fidelity prototypes and user-centric designs for complex enterprise applications.",
+      peepIndex: 5,
+      note: "Visual Architect."
+    },
+    {
+      type: "work",
+      title: "Designer & UX Consultant",
+      company: "DV Hotel Consultant",
+      period: "Consulting",
+      desc: "Auditing user journey flows and implementing high-impact design transformations for hospitality brands.",
+      peepIndex: 22,
+      note: "Experience auditor."
+    },
+    {
+      type: "work",
+      title: "Freelance Graphic Designer",
+      company: "Self-Employed",
+      period: "Early Career",
+      desc: "Building a foundation in visual storytelling, color theory, and digital branding across diverse industries.",
+      peepIndex: 12,
+      note: "Creative beginnings."
     },
     {
       type: "education",
-      title: "Bachelors in Fine Arts",
-      company: "Metropolitan University",
-      period: "2014 — 2018",
-      desc: "Foundation in visual storytelling and color theory.",
+      title: "10+2 Secondary Education",
+      company: "CM Rise Hr Sec School, Bina",
+      period: "Completed",
+      desc: "Academic foundation in higher secondary education.",
       peepIndex: 82,
-      note: "The beginning."
+      note: "Foundation."
+    },
+    {
+      type: "education",
+      title: "Advanced UX Design",
+      company: "Tutedude",
+      period: "Certification",
+      desc: "Intensive training in psychological principles and interaction design frameworks.",
+      peepIndex: 12,
+      note: "Mastering principles."
+    },
+    {
+      type: "education",
+      title: "How to Figma",
+      company: "Design Sundays",
+      period: "Certification",
+      desc: "Mastery of collaborative design tools and component-driven architecture in Figma.",
+      peepIndex: 42,
+      note: "Tool proficiency."
     },
   ];
 
@@ -66,7 +102,7 @@ const Career = () => {
   };
 
   return (
-    <section id="career" className="relative py-40 bg-background text-black overflow-hidden" ref={containerRef}>
+    <section id="career" className="relative py-40 bg-background text-black overflow-clip" ref={containerRef}>
       {/* Background Text Illustration */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 pointer-events-none select-none z-0">
         <span className="text-[25vw] font-black text-black/[0.03] tracking-tighter leading-none ml-20">
@@ -80,8 +116,8 @@ const Career = () => {
         <div className="grid lg:grid-cols-[0.4fr_1fr] gap-12 lg:gap-24">
 
           {/* Left Column: Sticky Header & Navigation */}
-          <div className="relative">
-            <div className="lg:sticky lg:top-40 space-y-12">
+          <div className="relative h-full">
+            <div className="lg:sticky lg:top-32 space-y-12 h-fit">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -90,11 +126,11 @@ const Career = () => {
                 <span className="text-xs uppercase tracking-[0.3em] text-black/70 font-black mb-6 block">
                   Evolution
                 </span>
-                <h2 className="text-5xl md:text-6xl font-light tracking-tight leading-[1.1] mb-8">
-                  The <br />
-                  <span className="italic font-serif text-black/70">Journey</span>.
+                <h2 className="text-4xl md:text-6xl font-light tracking-tight leading-[1.1] mb-8">
+                  The <br className="hidden md:block" />
+                  <span className="italic text-black/70">Journey</span>.
                 </h2>
-                <p className="text-lg text-black/70 font-medium leading-relaxed max-w-xs">
+                <p className="text-lg text-black font-medium leading-relaxed max-w-xs">
                   A curated record of professional growth and academic milestones.
                 </p>
 
@@ -102,7 +138,7 @@ const Career = () => {
                 <motion.div
                   initial={{ opacity: 0, rotate: -3 }}
                   whileInView={{ opacity: 1 }}
-                  className="mt-8 font-[family-name:var(--font-hand)] text-black/60 text-xl"
+                  className="mt-8 text-black text-xl"
                 >
                   Continuously evolving.
                 </motion.div>
@@ -110,12 +146,12 @@ const Career = () => {
 
               {/* Minimal Progress Indicator */}
               <div className="hidden lg:flex items-center gap-6 group">
-                <div className="h-[1px] w-12 bg-black/10 group-hover:w-20 transition-all duration-500" />
+                <div className="h-[1px] w-12 bg-black/40 group-hover:w-20 transition-all duration-500" />
                 <motion.div
                   animate={{ y: [0, 5, 0] }}
                   transition={{ repeat: Infinity, duration: 2 }}
                 >
-                  <ArrowDown size={14} className="text-black/30" />
+                  <ArrowDown size={14} className="text-black/80" />
                 </motion.div>
               </div>
             </div>
@@ -132,64 +168,124 @@ const Career = () => {
               />
             </div>
 
-            <div className="space-y-32">
-              {timeline.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                  variants={itemVars}
-                  className="relative pl-12 lg:pl-20 group"
-                >
-                  {/* Decorative Anchor Dot */}
-                  <div className="absolute left-[-4.5px] top-2">
-                    <div className="w-[10px] h-[10px] rounded-full bg-white border border-black group-hover:scale-150 transition-transform duration-500" />
+            <div className="space-y-40">
+              {/* Highlighted Work Experience Section */}
+              <div className="space-y-24">
+                <div className="flex items-center gap-4 mb-12">
+                  <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
+                    <Briefcase className="w-4 h-4 text-white" />
                   </div>
+                  <h3 className="text-xl font-bold uppercase tracking-[0.3em]">Work Experience</h3>
+                </div>
 
-                  {/* Period Label with Handwritten note */}
-                  <div className="flex items-center justify-between mb-6 pr-4">
-                    <div className="flex items-center gap-4">
-                      <span className="text-xs font-mono text-black/20">0{i + 1}</span>
-                      <span className="text-[10px] uppercase tracking-[0.4em] text-black/40 font-black">
-                        {item.period}
+                {timeline.filter(item => item.type === 'work').map((item, i) => (
+                  <motion.div
+                    key={`work-${i}`}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={itemVars}
+                    className="relative pl-12 lg:pl-20 group"
+                  >
+                    <div className="absolute left-[-4.5px] top-2">
+                      <div className="w-[10px] h-[10px] rounded-full bg-black border border-white group-hover:scale-150 transition-transform duration-500" />
+                    </div>
+
+                    <div className="flex items-center justify-between mb-6 pr-4">
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs text-black/60 font-black">Ex-0{i + 1}</span>
+                        <span className="text-[10px] uppercase tracking-[0.4em] text-black/40 font-black">
+                          {item.period}
+                        </span>
+                      </div>
+                      <span className="text-black text-sm italic group-hover:text-black transition-colors">
+                        {item.note}
                       </span>
                     </div>
-                    <span className="font-[family-name:var(--font-hand)] text-black/30 text-sm italic group-hover:text-black/60 transition-colors">
-                      {item.note}
-                    </span>
-                  </div>
 
-                  {/* Content with Contextual Peep */}
-                  <div className="max-w-2xl relative">
-                    <div className="absolute -left-20 top-0 hidden xl:block">
-                      <PeepIllustration
-                        index={item.peepIndex}
-                        className="w-16 h-16 opacity-50 group-hover:opacity-100 transition-all duration-700"
-                        animated={true}
-                      />
-                    </div>
-
-                    <h4 className="text-3xl md:text-5xl font-light text-black mb-4 group-hover:translate-x-2 transition-transform duration-700">
-                      {item.title}
-                    </h4>
-
-                    <div className="flex items-center gap-3 mb-8">
-                      {item.type === 'work' ?
-                        <Briefcase size={14} className="text-black/20" /> :
-                        <GraduationCap size={14} className="text-black/20" />
-                      }
-                      <p className="text-[11px] uppercase tracking-widest text-black/40 font-black italic">
-                        {item.company}
+                    <div className="max-w-2xl relative">
+                      <div className="absolute -left-20 top-0 hidden xl:block">
+                        <PeepIllustration
+                          index={item.peepIndex}
+                          className="w-16 h-16 opacity-60 group-hover:opacity-100 transition-all duration-700"
+                          animated={true}
+                        />
+                      </div>
+                      <h4 className="text-3xl md:text-5xl font-light text-black mb-4 group-hover:translate-x-2 transition-transform duration-700">
+                        {item.title}
+                      </h4>
+                      <div className="flex items-center gap-3 mb-8">
+                        <Briefcase size={14} className="text-black" />
+                        <p className="text-[11px] uppercase tracking-widest text-black/80 font-black italic">
+                          {item.company}
+                        </p>
+                      </div>
+                      <p className="text-black text-lg md:text-xl leading-relaxed font-light">
+                        {item.desc}
                       </p>
                     </div>
+                  </motion.div>
+                ))}
+              </div>
 
-                    <p className="text-black/40 text-lg md:text-xl leading-relaxed font-light">
-                      {item.desc}
-                    </p>
+              {/* Learning / Education Section */}
+              <div className="space-y-24">
+                <div className="flex items-center gap-4 mb-12 opacity-60">
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center">
+                    <GraduationCap className="w-4 h-4 text-black" />
                   </div>
-                </motion.div>
-              ))}
+                  <h3 className="text-xl text-black font-bold uppercase tracking-[0.3em]">Education & Learning</h3>
+                </div>
+
+                {timeline.filter(item => item.type === 'education').map((item, i) => (
+                  <motion.div
+                    key={`edu-${i}`}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={itemVars}
+                    className="relative pl-12 lg:pl-20 group"
+                  >
+                    <div className="absolute left-[-4.5px] top-2">
+                      <div className="w-[10px] h-[10px] rounded-full bg-white border border-black group-hover:scale-150 transition-transform duration-500" />
+                    </div>
+
+                    <div className="flex items-center justify-between mb-6 pr-4">
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs text-black/60 font-black">Ed-0{i + 1}</span>
+                        <span className="text-[10px] uppercase tracking-[0.4em] text-black/40 font-black">
+                          {item.period}
+                        </span>
+                      </div>
+                      <span className="text-black text-sm italic group-hover:text-black transition-colors">
+                        {item.note}
+                      </span>
+                    </div>
+
+                    <div className="max-w-2xl relative">
+                      <div className="absolute -left-20 top-0 hidden xl:block">
+                        <PeepIllustration
+                          index={item.peepIndex}
+                          className="w-16 h-16 opacity-60 group-hover:opacity-100 transition-all duration-700"
+                          animated={true}
+                        />
+                      </div>
+                      <h4 className="text-3xl md:text-5xl font-light text-black mb-4 group-hover:translate-x-2 transition-transform duration-700">
+                        {item.title}
+                      </h4>
+                      <div className="flex items-center gap-3 mb-8">
+                        <GraduationCap size={14} className="text-black" />
+                        <p className="text-[11px] uppercase tracking-widest text-black/80 font-black italic">
+                          {item.company}
+                        </p>
+                      </div>
+                      <p className="text-black text-lg md:text-xl leading-relaxed font-light">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
