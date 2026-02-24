@@ -6,22 +6,44 @@ const Hero = () => {
   return (
     <section id="hero" className="relative h-screen w-full bg-background text-black overflow-hidden pt-20">
       {/* Header Info */}
-      <div className="absolute lg:top-20 top-40 left-1/2 grid -translate-x-1/2 content-start justify-items-center gap-10 text-center text-black z-20">
+      <div className="absolute lg:top-20 top-40 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 grid justify-items-center gap-12 text-center text-black z-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="flex flex-col items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="flex flex-col items-center w-full"
         >
 
-
-          <h1 className="text-7xl md:text-[9vw]  font-black tracking-lighter leading-[0.8] mb-5">
-            Digital Creator.
+          <h1 className="flex flex-col items-center">
+            <motion.span
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              className="text-7xl md:text-[8vw] font-black tracking-lighter leading-[1] block"
+            >
+              Designing
+            </motion.span>
+            <motion.span
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+              className="text-7xl md:text-[8vw] font-black tracking-lighter leading-[1] italic text-black/90 block -mt-2"
+            >
+              intent.
+            </motion.span>
           </h1>
 
-          <p className="text-sm md:text-base font-bold uppercase tracking-[0.3em] text-black/70 max-w-xl">
-            UX Designer • UX Analyst • Product Strategist
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="lg:mt-0 mt-5 flex flex-col items-center gap-4"
+          >
+            <div className="h-[1px] w-24 bg-black/10" />
+            <p className="text-[10px] md:text-sm font-black uppercase tracking-[0.5em] text-black/60 max-w-xl">
+              UX Designer <span className="text-black/40 mx-2">•</span> UX Analyst <span className="text-black/20 mx-2">•</span> Product Strategist
+            </p>
+          </motion.div>
         </motion.div>
       </div>
 
