@@ -16,7 +16,7 @@ const Projects = () => {
   const studioEase = [0.22, 1, 0.36, 1];
 
   return (
-    <section id="projects" className="py-24 bg-background text-black overflow-hidden relative">
+    <section id="projects" className="pt-24 bg-background text-black overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Header Segment */}

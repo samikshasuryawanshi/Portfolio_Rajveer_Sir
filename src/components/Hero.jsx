@@ -15,8 +15,8 @@ const Hero = () => {
         >
 
 
-          <h1 className="text-7xl md:text-[9vw] font-black tracking-lighter leading-[0.8] mb-5">
-            Rajveer Parmar.
+          <h1 className="text-7xl md:text-[9vw]  font-black tracking-lighter leading-[0.8] mb-5">
+            Digital Creator.
           </h1>
 
           <p className="text-sm md:text-base font-bold uppercase tracking-[0.3em] text-black/70 max-w-xl">

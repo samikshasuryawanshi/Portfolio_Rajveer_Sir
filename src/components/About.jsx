@@ -44,7 +44,7 @@ const About = () => {
           {/* Left Column: Content */}
           <div>
             <motion.div variants={itemVars} className="inline-block mb-4">
-              <span className="text-xs uppercase tracking-[0.3em] text-black/80 font-black">
+              <span className="text-xs uppercase tracking-[0.3em] text-black font-black">
                 About — Studio
               </span>
             </motion.div>
@@ -56,7 +56,7 @@ const About = () => {
 
             <motion.p
               variants={itemVars}
-              className="text-xl text-black/80 max-w-xl leading-relaxed mb-16 font-medium"
+              className="text-xl text-black max-w-xl leading-relaxed mb-16 font-medium"
             >
               I bridge the gap between aesthetic excellence and commercial performance.
               My approach is minimal by design, ensuring your brand speaks clearly
@@ -71,7 +71,7 @@ const About = () => {
                   className="group relative flex items-center justify-between py-6 border-b border-black/5 hover:border-black/20 transition-colors cursor-default"
                 >
                   <div className="flex items-center gap-6">
-                    <span className="text-xs text-black/70">0{i + 1}</span>
+                    <span className="text-xs text-black/60 font-black">0{i + 1}</span>
                     <h3 className="text-2xl font-light group-hover:translate-x-2 transition-transform duration-500">
                       {skill.title}
                     </h3>
@@ -138,7 +138,7 @@ const About = () => {
               <motion.div
                 initial={{ opacity: 0, rotate: -10 }}
                 whileInView={{ opacity: 1, rotate: -5 }}
-                className="absolute -bottom-20 -left-4 text-black/40 text-lg leading-tight w-40"
+                className="absolute -bottom-20 -left-4 text-black text-lg leading-tight w-40"
               >
                 Tested & verified through data.
               </motion.div>

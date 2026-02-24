@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Menu, X, Linkedin, Mail, ArrowRight } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +61,7 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           className="pointer-events-auto relative z-[120] text-3xl font-bold tracking-tighter text-black group flex items-center"
         >
-          Rajveer Parmar<span className="text-black/70 group-hover:rotate-12 transition-transform inline-block">.</span>
+          Rajveer<span className="text-black/70 group-hover:rotate-12 transition-transform inline-block">.</span>
         </motion.a>
 
         {/* Desktop Nav */}
@@ -92,7 +92,15 @@ const Navbar = () => {
         {/* Action Side */}
         <div className="hidden lg:flex items-center gap-6 pointer-events-auto relative z-[120]">
           <div className="flex gap-4">
-            <motion.a whileHover={{ y: -2 }} href="#" className="text-black/70 hover:text-black transition-colors"><Github size={18} /></motion.a>
+            <motion.a
+              whileHover={{ y: -2 }}
+              href="https://www.behance.net/rajveersinghp1/projects"
+              className="text-black/70 hover:text-black transition-colors"
+            >
+              <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
+                <path d="M9 12H5M9 8H5M9 16H5M5 16h4a2 2 0 0 0 0-4H5m0 0h4a2 2 0 0 0 0-4H5m13 4h3m0-4h-3a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h3" />
+              </svg>
+            </motion.a>
             <motion.a whileHover={{ y: -2 }} href="#" className="text-black/70 hover:text-black transition-colors"><Linkedin size={18} /></motion.a>
           </div>
           <motion.a
@@ -149,7 +157,11 @@ const Navbar = () => {
             {/* Mobile Footer Area */}
             <div className="mt-auto pb-12 flex flex-col gap-8 relative z-10">
               <div className="flex gap-8 text-black">
-                <Github size={24} />
+                <a href="https://www.behance.net/rajveersinghp1/projects" className="transition-colors">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                    <path d="M9 12H5M9 8H5M9 16H5M5 16h4a2 2 0 0 0 0-4H5m0 0h4a2 2 0 0 0 0-4H5m13 4h3m0-4h-3a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h3" />
+                  </svg>
+                </a>
                 <Linkedin size={24} />
                 <Mail size={24} />
               </div>
