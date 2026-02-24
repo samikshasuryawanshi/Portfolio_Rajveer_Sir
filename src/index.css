@@ -1,19 +1,13 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
 @theme {
   --color-primary: #000000;
-  /* High contrast black */
   --color-secondary: #4B5563;
-  /* Slate-600 */
   --color-accent: #00FF94;
-  /* Neo Mint for subtle pops */
   --color-background: #E5E7EB;
-  /* Stone Gray Background */
   --color-surface: #D1D5DB;
-  /* Darker Gray Surface */
   --color-foreground: #000000;
-  /* Pure Black Text */
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-hand: "Caveat", cursive;
